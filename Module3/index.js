@@ -19,6 +19,10 @@ class Form extends React.Component{
 		var itemsCopy = this.state.items.slice()
 		var restrictions = (this.state.a ? "a" : "") + (this.state.b ? "b" : "") + (this.state.c ? "c" : "")
 		itemsCopy.push([this.state.firstName, this.state.lastName, this.state.value, restrictions])
+		this.setState({items:itemsCopy, value: "Science Lab", firstName: "", lastName: "", a: false, b: false, c: false}, () => {
+			var elem = document.querySelector("select")
+			var instance = M.Select.init(elem)
+		})
 		event.preventDefault()
 	}
 	removeItem(index){
